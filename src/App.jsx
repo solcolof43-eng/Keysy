@@ -251,7 +251,20 @@ export default function App() {
   ];
 
   return (
-    <div style={{ fontFamily: "-apple-system,'Segoe UI',system-ui,sans-serif", background: PORC, minHeight: "100vh", color: NAV }}>
+    <div style={{ fontFamily: "-apple-system,'Segoe UI',system-ui,sans-serif", background: PORC, minHeight: "100vh", color: NAV, WebkitFontSmoothing: "antialiased", MozOsxFontSmoothing: "grayscale" }}>
+      <style>{`
+        @media (max-width: 600px) {
+          header > div { height: auto !important; padding: 12px 20px !important; flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
+          header div[style*="gap: 18"] { gap: 10px !important; }
+          .hero-content { padding: 40px 20px !important; }
+          .kpi-grid { grid-template-columns: 1fr !important; }
+          .charts-grid { grid-template-columns: 1fr !important; }
+          .cases-header { flex-direction: column !important; align-items: flex-start !important; }
+          .footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .footer-bottom { flex-direction: column !important; gap: 10px !important; }
+        }
+        img { image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+      `}</style>
 
       {/* HEADER */}
       <header style={{ position: "sticky", top: 0, zIndex: 100, background: "rgba(253,250,245,.97)", borderBottom: "1px solid " + BABY }}>
@@ -302,7 +315,7 @@ export default function App() {
       <main style={{ maxWidth: 1200, margin: "0 auto", padding: "32px 24px 72px" }}>
 
         {/* KPI */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 16, marginBottom: 24 }}>
+        <div className="kpi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 16, marginBottom: 24 }}>
           {kpis.map((k, i) => {
             const KpiIc = k.Ic;
             return (
@@ -405,7 +418,7 @@ export default function App() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: 26, marginBottom: 26 }}>
             <div>
               <div style={{ marginBottom: 12 }}>
-                <img src={logo} alt="Touch Oil Logo" style={{ height: 32 }} />
+                <img src={logo} alt="Touch Oil Logo" style={{ height: 32, filter: "brightness(0) invert(1)" }} />
               </div>
               <p style={{ margin: 0, fontSize: 13, color: "#6B8EC0", lineHeight: 1.65 }}>Стратегический нефтегазовый консалтинг. Трансформируем данные в победы.</p>
             </div>
