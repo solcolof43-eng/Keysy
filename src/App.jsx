@@ -339,7 +339,7 @@ export default function App() {
         </div>
 
         {/* CHARTS */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginBottom: 24 }}>
+        <div className="charts-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginBottom: 24 }}>
           <div style={{ background: "#fff", borderRadius: 14, padding: "24px 20px", border: "1.5px solid #E0E8F4", boxShadow: "0 2px 10px rgba(16,49,106,.05)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 3 }}>
               <BarChart3 size={14} color={BLU} />
@@ -360,7 +360,7 @@ export default function App() {
 
         {/* CASES */}
         <div style={{ background: "#fff", borderRadius: 14, padding: "26px 22px", border: "1.5px solid #E0E8F4", boxShadow: "0 2px 10px rgba(16,49,106,.05)" }}>
-          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-start", justifyContent: "space-between", gap: 14, marginBottom: 20 }}>
+          <div className="cases-header" style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-start", justifyContent: "space-between", gap: 14, marginBottom: 20 }}>
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 5 }}>
                 <FileText size={16} color={BLU} />
@@ -415,7 +415,7 @@ export default function App() {
       {/* FOOTER */}
       <footer style={{ background: NAV, padding: "38px 24px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: 26, marginBottom: 26 }}>
+          <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: 26, marginBottom: 26 }}>
             <div>
               <div style={{ marginBottom: 12 }}>
                 <img src={logo} alt="Touch Oil Logo" style={{ height: 32, filter: "brightness(0) invert(1)" }} />
